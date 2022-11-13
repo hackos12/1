@@ -1,0 +1,30 @@
+#include "windows.h"
+#include "MathLibrary.h"
+namespace MathLibrary
+{
+	double Functions::Add(double a, double b)
+	{
+		return a + b;
+	}
+	double Functions::Multiply(double a, double b)
+	{
+		return a * b;
+	}
+	double Functions::AddMultiply(double a, double b)
+	{
+		return a + (a * b);
+	}
+	double Functions::Divide(double a, double b)
+	{
+		return a / b;
+	}
+}
+
+
+//Disable precompiled headers > not using > pch.h 
+
+//properties > application include directories > ..\..\MathLibrary\MathLibrary
+
+//Linkers > Input > Additional Dependencies > MathLibrary.lib
+//Linkers > General > Additional Library Directories > ..\..\MathLibrary\$(IntDir)
+// Build Events > 	Post Build Events > Command Line > xcopy /y /d "..\..\MathLibrary\$(IntDir)MathLibrary.dll" "$(OutDir)"
